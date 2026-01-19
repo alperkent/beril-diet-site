@@ -63,6 +63,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="meal_plans.html" class="nav-link active">Meal Plans</a>
                 <a href="bmi_calculator.html" class="nav-link">BMI Calculator</a>
+                <a href="food_exchange.html" class="nav-link">Exchange Table</a>
                 <a href="advice.html" class="nav-link">General Advice</a>
                 <a href="nutrition.html" class="nav-link">Mindful Nutrition</a>
                 <a href="fruit.html" class="nav-link">Fruit Portions</a>
@@ -71,12 +72,14 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
-
-        <div style="text-align: center; margin-bottom: 2rem;">
+    <header class="hero-small">
+        <div class="container">
             <h1>Meal Plans</h1>
             <p>Select your dietitian to view their specialized plans.</p>
         </div>
+    </header>
+
+    <main class="container" style="margin-top: -3rem; position: relative; z-index: 10;">
 
         <!-- Dietitian Selection -->
         <div class="dietitian-tabs">
@@ -111,19 +114,18 @@
             <div id="program1" class="tab-content active">
                 <div class="card">
                     <h2>19.08.20: Standard Balanced (Start)</h2>
+                    <div class="plan-meta">
+                        <p><strong>Notes:</strong></p>
+                        <ul>
+                            <li><strong>Lunch & Dinner:</strong> Can be swapped.</li>
+                            <li><strong>Oil:</strong> Use oil in only one meal. If meat has fat, do not add oil to
+                                salad.</li>
+                            <li><strong>Veggie Prep:</strong> 1kg vegetables with 3-4 tbsp oil.</li>
+                            <li><strong>Water:</strong> Drink at least 1L before evening.</li>
+                            <li><strong>Bread:</strong> Do not replace bread with soup.</li>
+                        </ul>
+                    </div>
                     <div class="grid grid-2">
-                        <div class="col-span-2"
-                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
-                            <p><strong>Notes:</strong></p>
-                            <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
-                                <li><strong>Lunch & Dinner:</strong> Can be swapped.</li>
-                                <li><strong>Oil:</strong> Use oil in only one meal. If meat has fat, do not add oil to
-                                    salad.</li>
-                                <li><strong>Veggie Prep:</strong> 1kg vegetables with 3-4 tbsp oil.</li>
-                                <li><strong>Water:</strong> Drink at least 1L before evening.</li>
-                                <li><strong>Bread:</strong> Do not replace bread with soup.</li>
-                            </ul>
-                        </div>
                         <div>
                             <h3>🍳 Breakfast (09:00)</h3>
                             <ul>
@@ -170,12 +172,10 @@
             <div id="program2" class="tab-content">
                 <div class="card">
                     <h2>27.08.20: 3-Day Personal Reset (Not Consecutive)</h2>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> At least 1L water by evening. Lunch and Dinner can be swapped.</p>
+                    </div>
                     <div class="grid grid-2">
-                        <div class="col-span-2"
-                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
-                            <p><strong>Goal:</strong> At least 1L water until evening. Lunch and Dinner can be swapped.
-                            </p>
-                        </div>
                         <div>
                             <h3>🍳 Breakfast (09:00)</h3>
                             <ul>
@@ -247,12 +247,10 @@
             <div id="program3" class="tab-content">
                 <div class="card">
                     <h2>04.09.20: Balanced Plan</h2>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> At least 1L water by evening. Lunch and Dinner can be swapped.</p>
+                    </div>
                     <div class="grid grid-2">
-                        <div class="col-span-2"
-                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
-                            <p><strong>Important:</strong> Lunch and Dinner can be swapped. Drink at least 1L water by
-                                evening.</p>
-                        </div>
                         <div>
                             <h3>🍳 Breakfast (09:00)</h3>
                             <ul>
@@ -330,11 +328,10 @@
 
                 <div class="card" style="margin-top: 2rem;">
                     <h2>Routine Plan (Following Switch)</h2>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> At least 1L water by evening. Lunch and Dinner can be swapped.</p>
+                    </div>
                     <div class="grid grid-2">
-                        <div class="col-span-2"
-                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
-                            <p><strong>Goal:</strong> At least 1L water by evening. Lunch and Dinner can be swapped.</p>
-                        </div>
                         <div>
                             <h3>🍳 Breakfast (09:00)</h3>
                             <ul>
@@ -417,11 +414,10 @@
 
                 <div class="card" style="margin-top: 2rem;">
                     <h2>Routine Plan (Following Protein Focus)</h2>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> At least 1L water by evening.</p>
+                    </div>
                     <div class="grid grid-2">
-                        <div class="col-span-2"
-                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
-                            <p><strong>Goal:</strong> At least 1L water by evening.</p>
-                        </div>
                         <div>
                             <h3>🍳 Breakfast (09:00)</h3>
                             <ul>
@@ -544,8 +540,10 @@
             <div id="program7" class="tab-content">
                 <div class="card">
                     <h2>18.11.20: 2-Day Vegan Detox</h2>
-                    <p><strong>Goal:</strong> 2.5L Water/day. Sugar-free drinks allowed (tea/coffee/soda) at any time.
-                    </p>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> 2.5L Water/day. Sugar-free drinks allowed (tea/coffee/soda) at any
+                            time.</p>
+                    </div>
                     <div class="grid grid-2">
                         <div>
                             <h3>🍏 Breakfast (09:00)</h3>
@@ -642,7 +640,9 @@
             <div id="tugce1" class="tab-content active">
                 <div class="card">
                     <h2>13.04.24: Gluten/Lactose Free (1700 kcal)</h2>
-                    <p><strong>Goal:</strong> 2.5L Water | 200ml Oat Milk for Coffee</p>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> 2.5L Water | 200ml Oat Milk for Coffee</p>
+                    </div>
                     <div class="grid grid-2">
                         <div>
                             <h3>🍳 Breakfast (08:00)</h3>
@@ -696,7 +696,9 @@
             <div id="tugce2" class="tab-content">
                 <div class="card">
                     <h2>20.04.24: Lactose Free (1700 kcal)</h2>
-                    <p><strong>Goal:</strong> 3.0L Water</p>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> 3.0L Water</p>
+                    </div>
                     <div class="grid grid-2">
                         <div>
                             <h3>🍳 Breakfast (08:00)</h3>
@@ -753,7 +755,9 @@
             <div id="tugce3" class="tab-content">
                 <div class="card">
                     <h2>27.04.24: Gluten/Lactose Free (1600 kcal)</h2>
-                    <p><strong>Goal:</strong> 3.0L Water</p>
+                    <div class="plan-meta">
+                        <p><strong>Goal:</strong> 3.0L Water</p>
+                    </div>
                     <div class="grid grid-2">
                         <div>
                             <h3>🍳 Breakfast (08:00)</h3>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Exchange Table - Beril's Healthy Journey</title>
+    <!-- Google Fonts: Outfit for a modern, friendly geometric look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .exchange-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .exchange-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .category-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+        }
+
+        .category-title {
+            margin: 0;
+            color: var(--secondary);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .calorie-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .exchange-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .exchange-table td {
+            padding: 0.75rem 0;
+            vertical-align: top;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .exchange-table td:first-child {
+            font-weight: 600;
+            color: var(--secondary);
+            width: 35%;
+        }
+
+        .exchange-table td:last-child {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .exchange-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .content-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .content-sections {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .exchange-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exchange-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .exchange-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <span style="font-size: 1.5rem;">🥗</span> BerilDiet
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="meal_plans.html" class="nav-link">Meal Plans</a>
+                <a href="bmi_calculator.html" class="nav-link">BMI Calculator</a>
+                <a href="food_exchange.html" class="nav-link active">Exchange Table</a>
+                <a href="advice.html" class="nav-link">General Advice</a>
+                <a href="nutrition.html" class="nav-link">Mindful Nutrition</a>
+                <a href="fruit.html" class="nav-link">Fruit Portions</a>
+                <a href="tea.html" class="nav-link">Metabolism Tea</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-small">
+        <div class="container">
+            <h1>Food Exchange Table</h1>
+            <p>A comprehensive guide to food portions and their equivalents.</p>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: -3rem; position: relative; z-index: 10;">
+
+        <!-- Dairy Groups -->
+        <div class="exchange-grid">
+            <!-- Light Dairy -->
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🥛</span>
+                    <h2 class="category-title">Dairy (Light)</h2>
+                    <span class="calorie-badge">70 kcal</span>
+                </div>
+                <div class="exchange-table">
+                    <table>
+                        <tr>
+                            <td>200 ml Light Milk</td>
+                            <td>
+                                <ul class="exchange-list">
+                                    <li>200 ml Ayran</li>
+                                    <li>100 ml Kefir</li>
+                                    <li>125 g Light Yogurt</li>
+                                    <li>1 Pack Plain Activa</li>
+                                    <li>125 g Semi-Fat Yogurt</li>
+                                    <li>125 g Homemade Yogurt</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Full-Fat Dairy -->
+            <div class="category-card">
+                <div class="category-header">
+                    <span class="category-icon">🥛</span>
+                    <h2 class="category-title">Dairy (Full Fat)</h2>
+                    <span class="calorie-badge">115 kcal</span>
+                </div>
+                <div class="exchange-table">
+                    <table>
+                        <tr>
+                            <td>1 Milk + 1 Fat</td>
+                            <td>
+                                <ul class="exchange-list">
+                                    <li>200 ml Full-Fat Milk</li>
+                                    <li>200 ml Full-Fat Kefir</li>
+                                    <li>150 g Full-Fat Yogurt</li>
+                                    <li>300 ml Ayran</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fat Group -->
+        <div class="category-card" style="margin-bottom: 2rem;">
+            <div class="category-header">
+                <span class="category-icon">🥥</span>
+                <h2 class="category-title">Fat Group</h2>
+                <span class="calorie-badge">45 kcal</span>
+            </div>
+            <div class="content-sections">
+                <div>
+                    <p><strong>Standard: 5 Olives</strong></p>
+                    <ul class="exchange-list">
+                        <li>1 tsp Olive Oil</li>
+                        <li>5 Hazelnuts</li>
+                        <li>1 tsp (15g) Light Mayo</li>
+                        <li>1 tsp Caesar Sauce</li>
+                        <li>1 tbsp Coconut Powder (7g)</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="exchange-list" style="margin-top: 2.5rem;">
+                        <li>2 Whole Walnuts</li>
+                        <li>5 Cashews</li>
+                        <li>1 tsp Olive Paste</li>
+                        <li>1 tsp Tahini (7g)</li>
+                        <li>1 tsp Butter</li>
+                        <li>1 tsp Coconut Oil</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="exchange-list" style="margin-top: 2.5rem;">
+                        <li>6 Raw Almonds</li>
+                        <li>30g Avocado (1/4 Medium)</li>
+                        <li>2 tsp Cocoa (20g)</li>
+                        <li>1 tsp Cream</li>
+                        <li>1 tsp Flaxseed</li>
+                        <li>10 Roasted Peanuts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bread/Carb Group -->
+        <div class="category-card" style="margin-bottom: 2rem;">
+            <div class="category-header">
+                <span class="category-icon">🍞</span>
+                <h2 class="category-title">Bread/Carb Group</h2>
+                <span class="calorie-badge">70 kcal</span>
+            </div>
+            <div class="exchange-table">
+                <div class="content-sections">
+                    <div>
+                        <p><strong>Standard: 25g Bread</strong></p>
+                        <ul class="exchange-list">
+                            <li>1/4 Simit</li>
+                            <li>25g Chickpeas (Roasted)</li>
+                            <li>1 Ladle Soup</li>
+                            <li>Popcorn (1 Cup)</li>
+                            <li>2 tbsp Boiled Quinoa</li>
+                            <li>2 tbsp Boiled Buckwheat</li>
+                            <li>1/2 Medium Corn</li>
+                            <li>2 tbsp Bulgur / Rice Pilaf (Boiled)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="exchange-list" style="margin-top: 2.5rem;">
+                            <li>2 tbsp Boiled Corn</li>
+                            <li>2 tbsp Boiled Legumes</li>
+                            <li>2 Crispbreads (Wasa/Etimek)</li>
+                            <li>20g (2 tbsp) Oat Flakes</li>
+                            <li>20g (2 tbsp) Oat Bran</li>
+                            <li>3 tbsp Pasta (Cooked)</li>
+                            <li>20g Pasta (Dry weight)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="exchange-list" style="margin-top: 2.5rem;">
+                            <li>20g (2 tbsp) Wheat Germ</li>
+                            <li>3 tbsp Nesfit (20g)</li>
+                            <li>2 Rice/Corn Cakes</li>
+                            <li>3 Whole Wheat Crackers</li>
+                            <li>100g Potato</li>
+                            <li>100g Sweet Potato</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protein/Meat Group -->
+        <div class="category-card" style="margin-bottom: 2rem;">
+            <div class="category-header">
+                <span class="category-icon">🥩</span>
+                <h2 class="category-title">Meat/Protein Group</h2>
+                <span class="calorie-badge">70 kcal</span>
+            </div>
+            <div class="content-sections">
+                <div>
+                    <p><strong>1 Meatball / Meat (30g)</strong></p>
+                    <ul class="exchange-list">
+                        <li>50g Chicken</li>
+                        <li>50g (1 Small Skinless Drumstick)</li>
+                        <li>50g Salmon / Anchovy / Bonito</li>
+                        <li>50g Trout</li>
+                        <li>70g Sea Bass / Bream / Whiting</li>
+                        <li>80g Light Canned Tuna</li>
+                        <li>50g Turkey</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="exchange-list" style="margin-top: 2.5rem;">
+                        <li>40g Light Cheese</li>
+                        <li>30g Medium-Fat Cheese</li>
+                        <li>20g Tulum Cheese</li>
+                        <li>20g Aged Cheese</li>
+                        <li>20g Turkish Sausage (Sucuk)</li>
+                        <li>30g Curd Cheese</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="exchange-list" style="margin-top: 2.5rem;">
+                        <li>20g Feta Cheese (Ezine)</li>
+                        <li>20g String/Halloumi Cheese</li>
+                        <li>20g Imported Cheeses</li>
+                        <li>20g Cheddar Cheese</li>
+                        <li>50g Fat-Free Curd</li>
+                        <li>2 Slices Turkey Smoked XL</li>
+                        <li>1 Egg</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fruit Group -->
+        <div class="category-card" style="margin-bottom: 2rem;">
+            <div class="category-header">
+                <span class="category-icon">🍎</span>
+                <h2 class="category-title">Fruit Group</h2>
+                <span class="calorie-badge">60 kcal</span>
+            </div>
+            <div class="content-sections">
+                <div>
+                    <p><strong>70g Fruit</strong></p>
+                    <ul class="exchange-list">
+                        <li>1 Local Banana</li>
+                        <li>1/2 Imported Banana</li>
+                        <li>Fig (1 Piece)</li>
+                        <li>Mulberry</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>100g Fruit</strong></p>
+                    <ul class="exchange-list">
+                        <li>1/2 Medium Apple</li>
+                        <li>1/2 Medium Pear</li>
+                        <li>1 Amasya Apple</li>
+                        <li>25g Carob</li>
+                        <li>1/4 Quince</li>
+                        <li>1 Tea Cup Pomegranate</li>
+                        <li>1 Medium Kiwi</li>
+                        <li>1 Slice Pineapple</li>
+                        <li>3 Dried Apricots</li>
+                        <li>Damson Plum (1 Medium)</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>150g Fruit</strong></p>
+                    <ul class="exchange-list">
+                        <li>1 Bowl Strawberries (8-10 pcs)</li>
+                        <li>1 Cup Green Plum (7-8 pcs)</li>
+                        <li>150g Pumpkin</li>
+                        <li>Peach (1 Medium)</li>
+                        <li>Melon (1 Thin Slice)</li>
+                        <li>Watermelon (200g)</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #f0f0f0;">
+                <p style="margin-bottom: 1rem; color: var(--secondary); font-weight: 600;">Sauces & Jams</p>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; background: #f8fafc; padding: 1.25rem; border-radius: 1rem; font-size: 0.9rem; color: var(--text-muted); border: 1px solid #edf2f7;">
+                    <div>• 1 tbsp Agave Syrup (20g)</div>
+                    <div>• 2 tbsp BBQ Sauce</div>
+                    <div>• 2 tbsp Ketchup (40g)</div>
+                    <div>• 1 tbsp Pomegranate Molasses</div>
+                    <div>• 1 tbsp Grape Molasses</div>
+                    <div>• 1 tsp Honey</div>
+                    <div>• 1 tsp Molasses</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vegetable Group -->
+        <div class="category-card" style="margin-bottom: 3rem;">
+            <div class="category-header">
+                <span class="category-icon">🥦</span>
+                <h2 class="category-title">Vegetable Group</h2>
+                <span class="calorie-badge">28 kcal</span>
+            </div>
+            <div class="exchange-table">
+                <table>
+                    <tr>
+                        <td>200g Vegetables</td>
+                        <td>All vegetables except potatoes</td>
+                    </tr>
+                    <tr>
+                        <td>100g Vegetables</td>
+                        <td>Root vegetables like Pea / Celery / Carrot / Sweet Potato / Beetroot</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Beril's Diet Guide.</p>
+        </div>
+        </header>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
