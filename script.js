@@ -55,12 +55,22 @@ function openProgram(evt, programName) {
     }
 
     // 5. Update mobile dropdown if exists
-    // We might have multiple dropdowns now, one per dietitian.
-    // We'll leave this simple for now.
+    var mobileSelects = document.getElementsByClassName("tab-mobile-select");
+    for (i = 0; i < mobileSelects.length; i++) {
+        mobileSelects[i].value = programName;
+    }
+}
+
+function toggleMobileMenu() {
+    var navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
 }
 
 // Initialize default view
 document.addEventListener('DOMContentLoaded', function () {
-    // Open default dietitian (Beste)
-    document.getElementById('beste').style.display = 'block';
+    // Open default dietitian (Beste) if on meal plans page
+    var beste = document.getElementById('beste');
+    if (beste) {
+        beste.style.display = 'block';
+    }
 });

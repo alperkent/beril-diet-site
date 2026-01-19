@@ -58,6 +58,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo"><span style="font-size: 1.5rem;">🥗</span> BerilDiet</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="meal_plans.html" class="nav-link active">Meal Plans</a>
@@ -79,12 +80,22 @@
 
         <!-- Dietitian Selection -->
         <div class="dietitian-tabs">
-            <button class="diet-btn active" onclick="openDietitian(event, 'beste')">Beste Alimert</button>
-            <button class="diet-btn" onclick="openDietitian(event, 'tugce')">Tuğçe Ergen</button>
+            <button class="diet-btn active" onclick="openDietitian(event, 'beste')">Beste A.</button>
+            <button class="diet-btn" onclick="openDietitian(event, 'tugce')">Tuğçe E.</button>
         </div>
 
-        <!-- ========================== BESTE ALIMERT VIEW ========================== -->
+        <!-- ========================== BESTE A. VIEW ========================== -->
         <div id="beste" class="dietitian-view" style="display: block;">
+
+            <select class="tab-mobile-select" onchange="openProgram({currentTarget: null}, this.value)">
+                <option value="program1">19.08.20 (Start)</option>
+                <option value="program2">27.08.20 (Reset)</option>
+                <option value="program3">04.09.20</option>
+                <option value="program4">17.09.20 (Switch)</option>
+                <option value="program5">30.09.20 (Protein)</option>
+                <option value="program6">05.11.20 (Strict)</option>
+                <option value="program7">18.11.20 (Vegan)</option>
+            </select>
 
             <div class="tabs">
                 <button class="tab-btn active" onclick="openProgram(event, 'program1')">19.08.20 (Start)</button>
@@ -606,8 +617,17 @@
 
         </div>
 
-        <!-- ========================== TUĞÇE ERGEN VIEW ========================== -->
+        <!-- ========================== TUĞÇE E. VIEW ========================== -->
         <div id="tugce" class="dietitian-view">
+
+            <select class="tab-mobile-select" onchange="openProgram({currentTarget: null}, this.value)">
+                <option value="tugce1">13.04.24 (G/L Free)</option>
+                <option value="tugce2">20.04.24 (L Free)</option>
+                <option value="tugce3">27.04.24 (G/L Free)</option>
+                <option value="tugce4">27.06.24 (Maint)</option>
+                <option value="tugce5">08.07.24 (Maint)</option>
+                <option value="tugce6">08.08.24 (Summer)</option>
+            </select>
 
             <div class="tabs">
                 <button class="tab-btn active" onclick="openProgram(event, 'tugce1')">13.04.24 (G/L Free)</button>
