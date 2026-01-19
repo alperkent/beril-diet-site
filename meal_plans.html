@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plans - BerilDiet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dietitian-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .diet-btn {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .diet-btn.active,
+        .diet-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .dietitian-view {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo"><span style="font-size: 1.5rem;">🥗</span> BerilDiet</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="meal_plans.html" class="nav-link active">Meal Plans</a>
+                <a href="bmi_calculator.html" class="nav-link">BMI Calculator</a>
+                <a href="advice.html" class="nav-link">General Advice</a>
+                <a href="nutrition.html" class="nav-link">Mindful Nutrition</a>
+                <a href="fruit.html" class="nav-link">Fruit Portions</a>
+                <a href="tea.html" class="nav-link">Metabolism Tea</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h1>Meal Plans</h1>
+            <p>Select your dietitian to view their specialized plans.</p>
+        </div>
+
+        <!-- Dietitian Selection -->
+        <div class="dietitian-tabs">
+            <button class="diet-btn active" onclick="openDietitian(event, 'beste')">Beste Alimert</button>
+            <button class="diet-btn" onclick="openDietitian(event, 'tugce')">Tuğçe Ergen</button>
+        </div>
+
+        <!-- ========================== BESTE ALIMERT VIEW ========================== -->
+        <div id="beste" class="dietitian-view" style="display: block;">
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openProgram(event, 'program1')">19.08.20 (Start)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program2')">27.08.20 (Reset)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program3')">04.09.20</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program4')">17.09.20 (Switch)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program5')">30.09.20 (Protein)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program6')">05.11.20 (Strict)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'program7')">18.11.20 (Vegan)</button>
+            </div>
+
+            <!-- Program 1 -->
+            <div id="program1" class="tab-content active">
+                <div class="card">
+                    <h2>19.08.20: Standard Balanced (Start)</h2>
+                    <div class="grid grid-2">
+                        <div class="col-span-2"
+                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
+                            <p><strong>Notes:</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>Lunch & Dinner:</strong> Can be swapped.</li>
+                                <li><strong>Oil:</strong> Use oil in only one meal. If meat has fat, do not add oil to
+                                    salad.</li>
+                                <li><strong>Veggie Prep:</strong> 1kg vegetables with 3-4 tbsp oil.</li>
+                                <li><strong>Water:</strong> Drink at least 1L before evening.</li>
+                                <li><strong>Bread:</strong> Do not replace bread with soup.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice cheese (or 2 tbsp curd) + 1 boiled egg <strong>OR</strong> 2 eggs</li>
+                                <li>1 bowl of greens (parsley, dill, pepper, cucumber)</li>
+                                <li><strong>Fat:</strong> 2 walnuts / 5-6 olives / 1 tsp oil / 1 tsp butter / ½ avocado
+                                </li>
+                                <li><strong>Carb:</strong> 2 slices whole grain bread (50g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts/6 Almonds
+                                    + 1 tsp Chia</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00-14:00)</h3>
+                            <ul>
+                                <li><strong>Veggie Option:</strong> 6-7 tbsp cooked veggies + 4 tbsp yogurt + 2 slices
+                                    bread</li>
+                                <li><strong>Legume Option:</strong> 6 tbsp legumes + 4 tbsp yogurt + Salad</li>
+                                <li><strong>Alt Option:</strong> Any yeast-free/egg-free breakfast option</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>Ayran / 3 tbsp Yogurt / 1 slice Cheese / 10 Nuts</li>
+                                <li><strong>AND</strong></li>
+                                <li>1 Fruit / 1 slice Bread / 2 Rusks</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish <strong>OR</strong> 2 tins Tuna (160g) + Salad</li>
+                                <li><strong>Menemen:</strong> 2 eggs + veggies + Cacık + 1 slice bread</li>
+                                <li><strong>OR:</strong> 6 tbsp Legumes + 4 tbsp Yogurt + Salad</li>
+                                <li><strong>OR:</strong> 1 cup Milk + 1 scoop Protein Powder + Coffee + Ice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div id="program2" class="tab-content">
+                <div class="card">
+                    <h2>27.08.20: 3-Day Personal Reset (Not Consecutive)</h2>
+                    <div class="grid grid-2">
+                        <div class="col-span-2"
+                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
+                            <p><strong>Goal:</strong> At least 1L water until evening. Lunch and Dinner can be swapped.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>Menemen/Omelet (2 eggs) + Greens + 1 slice bread</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>160g Tuna + Salad (Large chunks; if carrot used, chop don't grate)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>10 Almonds + 1 Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>❄️ Dinner (19:00)</h3>
+                            <ul>
+                                <li>1 glass Milk + Protein Powder + Coffee + Ice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Routine Plan (Following Personal Reset)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice Cheese + 1 Egg <strong>OR</strong> 2 Eggs</li>
+                                <li>Greens + Fat source + 2 slices Bread (50g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish + 4 tbsp Yogurt + 2 slices Bread (50g)</li>
+                                <li><strong>OR:</strong> 6 tbsp Legume/Bulgur + Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Breakfast Option (Egg-free)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>Ayran/Yogurt/Cheese/Nuts</li>
+                                <li><strong>AND</strong> 1 Fruit / 1 slice Bread / 2 Rusks</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish/Tuna + Salad</li>
+                                <li><strong>OR:</strong> Menemen (2 eggs) + Cacık + 1 slice Bread</li>
+                                <li><strong>OR:</strong> Legumes + Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Yogurt + Protein Powder + Veggies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div id="program3" class="tab-content">
+                <div class="card">
+                    <h2>04.09.20: Balanced Plan</h2>
+                    <div class="grid grid-2">
+                        <div class="col-span-2"
+                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
+                            <p><strong>Important:</strong> Lunch and Dinner can be swapped. Drink at least 1L water by
+                                evening.</p>
+                        </div>
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice cheese + 1 egg + Greens + Fat source + 1 slice bread (25g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish + Yogurt + Bread OR Legumes + Yogurt + Salad</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Eat at 17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>Dairy/Nuts + Fruit/Carb</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Eat after sport</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>Fish/Tuna + Salad OR Menemen + Bread</li>
+                                <li><strong>OR:</strong> 1 bowl Yogurt/Cacık + 1 scoop Protein Powder + Cucumber + Dill
+                                </li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Nothing before sport (except Protein Powder)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 4 -->
+            <div id="program4" class="tab-content">
+                <div class="card">
+                    <h2>17.09.20: 3-Day Switch</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>2 Eggs + Greens + Fat source</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish + Yogurt + 2 slices bread</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>10 Almonds + 1 Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍲 Dinner (19:00)</h3>
+                            <ul>
+                                <li>Veggie Dish + Yogurt + 1 slice bread</li>
+                                <li><strong>OR:</strong> Oatmeal + Yogurt + Fruit Option (Same as Lunch)</li>
+                                <li><strong>OR:</strong> 1 bowl Soup + Veggies + 1 slice Bread</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Routine Plan (Following Switch)</h2>
+                    <div class="grid grid-2">
+                        <div class="col-span-2"
+                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
+                            <p><strong>Goal:</strong> At least 1L water by evening. Lunch and Dinner can be swapped.</p>
+                        </div>
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice cheese + 1 egg <strong>OR</strong> 2 eggs</li>
+                                <li>Greens + Fat source</li>
+                                <li>1 slice whole grain bread (25g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li><strong>Veggie:</strong> 6-7 tbsp Veggie Dish + 4 tbsp Yogurt + 1 slice Bread</li>
+                                <li><strong>Legume:</strong> 6 tbsp Legumes/Bulgur + 4 tbsp Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Breakfast Option (Egg-free)</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Eat at 17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>Ayran/Yogurt/Cheese/Nuts</li>
+                                <li><strong>AND</strong> 1 Fruit / 1 slice Bread / 2 Rusks</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Eat after sport</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish / 2 tins Tuna + Salad</li>
+                                <li><strong>OR:</strong> Menemen (2 eggs) + Cacık + 1 slice Bread</li>
+                                <li><strong>OR:</strong> 6 tbsp Legumes + 4 tbsp Yogurt + Salad</li>
+                                <li><strong>OR:</strong> 1 bowl Yogurt/Cacık + Protein Powder + Cucumber</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Nothing before sport (except Protein Powder)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 5 -->
+            <div id="program5" class="tab-content">
+                <div class="card">
+                    <h2>30.09.20: Protein Focus</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>2 Eggs + Greens + Fat source</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Ayran w/ Protein (add cucumber/greens if desired)</li>
+                                <li><strong>OR:</strong> Salata + 100g Salmon Füme</li>
+                                <li><strong>OR:</strong> Salata + 160g Ton Balığı (Tuna)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>10 Almonds + 1 Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍽️ Dinner (19:00)</h3>
+                            <ul>
+                                <li>Same as Lunch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Routine Plan (Following Protein Focus)</h2>
+                    <div class="grid grid-2">
+                        <div class="col-span-2"
+                            style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.95rem;">
+                            <p><strong>Goal:</strong> At least 1L water by evening.</p>
+                        </div>
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice Cheese + 1 Egg <strong>OR</strong> 2 Eggs</li>
+                                <li>Greens + Fat source + 1 slice Bread (25g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish (6-7 tbsp) + 4 tbsp Yogurt + 1 slice Bread</li>
+                                <li><strong>OR:</strong> Legumes/Bulgur + Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Breakfast Option (Egg-free)</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Eat at 17:00</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>Ayran/Yogurt/Cheese/Nuts</li>
+                                <li><strong>AND</strong> 1 Fruit / 1 slice Bread / 2 Rusks</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: After sport</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish / 2 tins Tuna + Salad</li>
+                                <li><strong>OR:</strong> Menemen (2 eggs) + 1 slice Bread</li>
+                                <li><strong>OR:</strong> Legumes + Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Yogurt/Cacık + Protein Powder + Veggies</li>
+                                <li style="color: var(--primary); font-weight: 500; margin-top: 0.5rem;">🏃‍♀️ Sport
+                                    Days: Nothing before sport (except Protein Powder)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 6 -->
+            <div id="program6" class="tab-content">
+                <div class="card">
+                    <h2>05.11.20: 3-4 Day Strict</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>2 Eggs + Greens + Fat + [Fruit OR 2 Rusks]</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Ayran w/ Protein (add cucumber/greens if desired)</li>
+                                <li><strong>OR:</strong> Salata + 100g Salmon Füme</li>
+                                <li><strong>OR:</strong> Salata + 160g Ton Balığı (Tuna)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>10 Almonds only</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍽️ Dinner (19:00)</h3>
+                            <ul>
+                                <li>Same as Lunch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Routine Plan (Following Strict)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice Cheese + 1 Egg <strong>OR</strong> 2 Eggs</li>
+                                <li>Greens + Fat source + 1 slice Bread (25g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish (6-7 tbsp) + 4 tbsp Yogurt + 1 slice Bread</li>
+                                <li><strong>OR:</strong> 6 tbsp Legumes + 4 tbsp Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Breakfast Option (Egg-free)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>1 Portion Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish / 2 tins Tuna + Salad</li>
+                                <li><strong>OR:</strong> Menemen (2 eggs) + 1 slice Bread</li>
+                                <li><strong>OR:</strong> Yogurt/Cacık + Protein Powder + Cucumber</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 7 -->
+            <div id="program7" class="tab-content">
+                <div class="card">
+                    <h2>18.11.20: 2-Day Vegan Detox</h2>
+                    <p><strong>Goal:</strong> 2.5L Water/day. Sugar-free drinks allowed (tea/coffee/soda) at any time.
+                    </p>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍏 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 Fruit + 5 Walnuts</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Salad (with 1 tbsp Olive Oil + Lemon) + 4-5 tbsp Chickpeas/Lentils/Buckwheat + 1
+                                    Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍵 Snack</h3>
+                            <ul>
+                                <li>10 Almonds/Hazelnuts OR 3 Walnuts + Metabolism Tea</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Dinner (19:00)</h3>
+                            <ul>
+                                <li>Soup + Veggie Dish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h2>Routine Plan (Following Vegan Detox)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (09:00)</h3>
+                            <ul>
+                                <li>1 slice Cheese + 1 Egg <strong>OR</strong> 2 Eggs</li>
+                                <li>Greens + Fat source + 1 slice Bread (25g)</li>
+                                <li><strong>OR:</strong> 4 tbsp Yogurt + 3 tbsp Oatmeal + 1 Fruit + 2 Walnuts + 1 tsp
+                                    Chia
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>Veggie Dish + 4 tbsp Yogurt + 1 slice Bread (25g)</li>
+                                <li><strong>OR:</strong> 6 tbsp Legumes/Bulgur + Yogurt + Salad</li>
+                                <li><strong>OR:</strong> Breakfast Option (Egg-free)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:30)</h3>
+                            <ul>
+                                <li>1 Portion Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (19:00)</h3>
+                            <ul>
+                                <li>250g Fish / 2 tins Tuna + Salad</li>
+                                <li><strong>OR:</strong> Menemen (2 eggs) + 1 slice Bread</li>
+                                <li><strong>OR:</strong> Yogurt/Cacık + Protein Powder + Cucumber</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================== TUĞÇE ERGEN VIEW ========================== -->
+        <div id="tugce" class="dietitian-view">
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openProgram(event, 'tugce1')">13.04.24 (G/L Free)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'tugce2')">20.04.24 (L Free)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'tugce3')">27.04.24 (G/L Free)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'tugce4')">27.06.24 (Maint)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'tugce5')">08.07.24 (Maint)</button>
+                <button class="tab-btn" onclick="openProgram(event, 'tugce6')">08.08.24 (Summer)</button>
+            </div>
+
+            <!-- Tuğçe 1 -->
+            <div id="tugce1" class="tab-content active">
+                <div class="card">
+                    <h2>13.04.24: Gluten/Lactose Free (1700 kcal)</h2>
+                    <p><strong>Goal:</strong> 2.5L Water | 200ml Oat Milk for Coffee</p>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (08:00)</h3>
+                            <ul>
+                                <li>2 Brown Rice Cakes + 1/2 Avocado</li>
+                                <li><strong>OR:</strong> 4 Dried Apricots + 12 Almonds</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (10:00)</h3>
+                            <ul>
+                                <li>1 medium Banana (140g)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (12:30)</h3>
+                            <ul>
+                                <li>Oat Börek (Pastry)</li>
+                                <li>1 tbsp Vegan Cheese (30g)</li>
+                                <li>Salad + Green Tea</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:00)</h3>
+                            <ul>
+                                <li>1 Rice Cake + 1 tbsp Peanut Butter</li>
+                                <li>1/2 Banana OR 100g Blueberries</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (18:00)</h3>
+                            <ul>
+                                <li><strong>Opt 1:</strong> Zucchini Dish + Salad</li>
+                                <li><strong>Opt 2:</strong> 210g Sea Bass/Catfish + 1 Rice Cake + Salad</li>
+                                <li><strong>Opt 3:</strong> Quinoa 'Kisir' (2 portions)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🌙 Night (20:00)</h3>
+                            <ul>
+                                <li>2 slices Fit Mosaic Cake</li>
+                                <li>Fennel / Chamomile Tea (Min 2 hrs before sleep!)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tuğçe 2 -->
+            <div id="tugce2" class="tab-content">
+                <div class="card">
+                    <h2>20.04.24: Lactose Free (1700 kcal)</h2>
+                    <p><strong>Goal:</strong> 3.0L Water</p>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (08:00)</h3>
+                            <ul>
+                                <li>2 Scrambled Eggs + 1 tsp Olive Oil</li>
+                                <li>1/2 Avocado + 1 slice Whole Grain Bread</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (10:00)</h3>
+                            <ul>
+                                <li>200g Fresh Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (12:00)</h3>
+                            <ul>
+                                <li>2 slices Bread</li>
+                                <li>1 tbsp Vegan Cheese (30g) + Greens + Green Tea</li>
+                                <li><strong>Alt 1:</strong> 200g Veggies (except potatoes and carrots) + 1 tsp olive oil
+                                </li>
+                                <li><strong>Alt 2:</strong> Avocado (30g) +
+                                    Tomatoes + Cucumber</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (15:00)</h3>
+                            <ul>
+                                <li>1 Rice Cake + 1 tbsp Peanut Butter</li>
+                                <li>100g Fruit / 70g Banana</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner (18:00)</h3>
+                            <ul>
+                                <li>40g Quinoa OR 200g Sweet Potato</li>
+                                <li>200g Salmon / 280g Sea Bass</li>
+                                <li>Salad</li>
+                                <li><strong>Alt 1:</strong> Lentil Pasta (80g) + Mushroom + Vegan Cheese</li>
+                                <li><strong>Alt 2:</strong> 4 slices Lentil Börek + Salad</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🌙 Night (20:00)</h3>
+                            <ul>
+                                <li>2 Dried Apricots / 100g Fruit / 150g Strawberries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuğçe 3 -->
+            <div id="tugce3" class="tab-content">
+                <div class="card">
+                    <h2>27.04.24: Gluten/Lactose Free (1600 kcal)</h2>
+                    <p><strong>Goal:</strong> 3.0L Water</p>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (08:00)</h3>
+                            <ul>
+                                <li>1 Egg + 1/2 Avocado</li>
+                                <li>1 slice GF Bread + 1 tbsp Vegan Cheese</li>
+                                <li>Salad</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (10:00)</h3>
+                            <ul>
+                                <li>200g Fresh Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (12:30)</h3>
+                            <ul>
+                                <li>250g Salmon + 250g Veggies + 1 tsp Olive Oil + 1 slice GF Bread</li>
+                                <li><strong>OR:</strong> 40g Buckwheat + Veggies + 280g Tofu</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (15:00)</h3>
+                            <ul>
+                                <li>Fit Waffle: 1 Rice Cake + 1 tbsp PB + 1/2 Banana</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍲 Dinner (18:00)</h3>
+                            <ul>
+                                <li>250g Veggies + 1 slice GF Bread + Vegan Yogurt</li>
+                                <li><strong>Alt 1:</strong> Olive Oil Veggie Dish (8 tbsp) + 1 slice GF Bread + Vegan
+                                    Yogurt</li>
+                                <li><strong>Alt 2:</strong> Spinach Börek (1/2 of the recipe) + Vegan Yogurt</li>
+                                <li><strong>Alt 3:</strong> Menemen (2 eggs) + 200g Veggies + 2 slices GF Bread</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuğçe 4 -->
+            <div id="tugce4" class="tab-content">
+                <div class="card">
+                    <h2>27.06.24: Maintenance (1800 kcal)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (08:00)</h3>
+                            <ul>
+                                <li>2 Scrambled Eggs</li>
+                                <li>2 slices GF Bread (50g)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (10:00)</h3>
+                            <ul>
+                                <li>200g Fresh Fruit</li>
+                                <li>10 nuts / 20g Peanut Butter</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (12:00)</h3>
+                            <ul>
+                                <li>GF Sandwich (Chicken/Turkey + Avo)</li>
+                                <li><strong>OR:</strong> GF Pasta (100g) + Tomato Sauce + Yogurt</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snacks</h3>
+                            <ul>
+                                <li>200g Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🌯 Dinner</h3>
+                            <ul>
+                                <li>1 piece GF lavash + Salad with:</li>
+                                <li><strong>Opt 1:</strong> 5 Chicken Kofta</li>
+                                <li><strong>Opt 2:</strong> 5 Vegan Kofta</li>
+                                <li><strong>Opt 3:</strong> 60g Cheese</li>
+                                <li><strong>Opt 4:</strong> 2-3 slice Turkey + 40g Cheese</li>
+                                <li><strong>OR:</strong> 8 tbsp Dry Legumes/Quinoa + 1/2 Avo + 125g Yogurt/20g Cheese
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuğçe 5 (08.07.24) -->
+            <div id="tugce5" class="tab-content">
+                <div class="card">
+                    <h2>08.07.24: Maintenance (1800 kcal)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast</h3>
+                            <ul>
+                                <li>2 Scrambled Eggs + 1/2 Avocado</li>
+                                <li>50g GF Bread</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (10:30)</h3>
+                            <ul>
+                                <li>150g Cashew/Coconut Yogurt + 100g Fresh Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (12:30)</h3>
+                            <ul>
+                                <li>4 pieces Bread + 2 points Meat + 2 points Fat</li>
+                                <li><strong>OR:</strong> 150g Coconut Yogurt + 80g Chickpeas + 80g Buckwheat</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (16:00)</h3>
+                            <ul>
+                                <li><strong>Opt 1:</strong> 400g Watermelon + 60g Vegan Cheese</li>
+                                <li><strong>Opt 2:</strong> 150g Yogurt + 200g Fruit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍲 Dinner (18:00)</h3>
+                            <ul>
+                                <li>8 tbsp Veggie Dish + 150g Yogurt + 25g GF Bread</li>
+                                <li><strong>OR:</strong> 400g Watermelon + 30g Vegan Cheese</li>
+                                <li><strong>OR:</strong> Zucchini Detox / Fit Shakshuka</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuğçe 6 (08.08 Summer) -->
+            <div id="tugce6" class="tab-content">
+                <div class="card">
+                    <h2>08.08.24: Summer Diet (1600 kcal)</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>🍳 Breakfast (10:00)</h3>
+                            <ul>
+                                <li>2 Eggs + 1 tsp Olive Oil</li>
+                                <li>40g Cheese</li>
+                                <li>50g Bread</li>
+                                <li>5 Olives/2 Walnuts</li>
+                                <li>Tomatoes + Cucumber + Greens</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥣 Snack (11:30)</h3>
+                            <ul>
+                                <li>200g Peach / Damson Plum</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🥗 Lunch (13:00)</h3>
+                            <ul>
+                                <li>2 Portions Cold Soup (Fat burner)</li>
+                                <li><strong>OR:</strong> 400g Watermelon + 40g Cheese</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🍦 Snack (Afternoon)</h3>
+                            <ul>
+                                <li>Coffee + 200g Lactose Free Milk</li>
+                                <li>Choice: 150g Fruit / 20g Dark Choc / 2 scoops Ice Cream / 1 slice Apple Plum Cake
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🐟 Dinner</h3>
+                            <ul>
+                                <li><strong>Opt 1:</strong> 280g Seabass/Bream + Salad</li>
+                                <li><strong>Opt 2:</strong> 200g Chicken/Salmon + Salad</li>
+                                <li><strong>Opt 3:</strong> 2 Egg Menemen + 125g Lactose Free Yogurt + Salad</li>
+                                <li><strong>Opt 4:</strong> 8 tbsp Olive Oil Veggie Dish + 2 tbsp
+                                    Bulgur/Buckwheat/Beans/25g Bread/100g Potatoes + 250g Lactose Free Yogurt/40g Cheese
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Beril's Diet Guide.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
